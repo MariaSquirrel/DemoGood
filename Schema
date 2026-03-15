@@ -1,0 +1,51 @@
+
+--create table demo07.Product(
+--id Serial primary key,
+--name varchar(70),
+--price decimal,
+--manufacturer_id int references demo07.manufacturer(id)
+--)
+
+
+--create table demo07.user(
+--id Serial primary key,
+--name varchar(70),
+--password varchar(70),
+--login varchar(70),
+--role_id int references demo07.role(id), 
+--PhotoName varchar(100)
+--)
+
+--create table demo07.role(
+--id Serial primary key,
+--name varchar(70)
+--)
+
+--create table demo07.orders(
+--    id Serial primary key,
+--    order_number varchar(50) unique not null,
+--    client_id int references demo07.client(id),
+--    user_id int references demo07.user(id),
+--    DateCreate timestamptz default now(),
+--    Cost decimal,
+--    barcode text
+--)
+
+--create table demo07.orders_product(
+--Orders_id int references demo07.orders(id) on delete cascade ,
+--Product_id int references demo07.Product(id),
+--primary key (Orders_id,Product_id)
+--)
+
+--create table demo07.Client(
+--id Serial primary key,
+--name varchar(70),
+--family varchar(70),
+--Patronomic varchar(70),
+--birthday date,
+--PassportSeria int,
+--PassportNumber int,
+--Phone int,
+--email varchar(100)
+--
+--)
